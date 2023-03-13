@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support - Recherche de film/série par description</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+     .container {
+        max-width: 8000px;
+        margin: 50px auto;
+        text-align: justify;
+      }
+      .heading {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .section {
+        margin-bottom: 30px;
+        text-align: justify;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">Bienvenue sur MovieMemo notre plateforme de recherche de film/série par description</div>
+      <div class="section">
+        <h3><strong>Pourquoi avons-nous créé cette plateforme ?</strong></h3>
+        <p>
+          Nous sommes heureux de vous accueillir sur MovieMemo, notre plateforme de recherche de films et de séries par description. Nous avons créé cette plateforme pour répondre à un besoin universel que nous avons tous rencontré : celui de ne pas se rappeler le nom d'un film ou d'une série, même si nous en connaissons des moments forts.</br></br>
+          En effet, il est fréquent que nous soyons plongés dans l'histoire d'un film ou d'une série, absorbés par les personnages et l'intrigue, pour finalement ne pas réussir à nous rappeler du titre. Cette frustration est partagée par de nombreuses personnes et peut nous empêcher de recommander le film ou la série à nos amis ou de le regarder à nouveau dans le futur.</br></br>
+          C'est pour cette raison que nous avons créé MovieMemo. Notre plateforme permet de trouver le titre d'un film ou d'une série à partir de sa description. Grâce à notre algorithme de recherche avancé, vous pouvez taper une description précise ou même vague du film ou de la série que vous recherchez et obtenir un résultat pertinent en quelques secondes.</br></br>
+          Notre plateforme est facile à utiliser et accessible à tous, que vous soyez un cinéphile averti ou simplement à la recherche d'un bon film pour une soirée en famille. Nous espérons que MovieMemo vous aidera à retrouver ces films et séries que vous avez aimés, mais dont le nom vous a échappé.
+        </p>
+      </div>
+      <div class="section">
+        <h3><strong>Description de la plateforme</strong></h3>
+        <p>
+          Notre plateforme utilise une intelligence artificielle de pointe qui analyse la description fournie par l'utilisateur pour trouver le titre correspondant. Il convient de noter que notre base de données de films et de séries est arrêtée à l'année 2021, ce qui garantit des résultats précis et fiables pour les utilisateurs.</br></br>
+          Notre technologie de pointe permet d'identifier rapidement les films et les séries recherchés, en fournissant des résultats rapides et précis. Nous avons conçu notre plateforme pour être facile à utiliser, même pour les personnes qui ne sont pas des experts en cinéma ou en technologie. Nous sommes convaincus que MovieMemo sera un outil précieux pour tous les amateurs de cinéma et de séries qui cherchent à retrouver des titres de films ou de séries dont ils ont oublié le nom.</br></br>
+          Nous sommes fiers de proposer une expérience utilisateur fluide et intuitive, grâce à notre interface utilisateur élégante et notre algorithme de recherche sophistiqué. Nous sommes convaincus que notre plateforme répondra aux besoins des utilisateurs en matière de recherche de films et de séries, en leur offrant une solution de qualité supérieure pour retrouver rapidement et facilement leurs films et leurs séries préférés.</br></br>
+        </p>
+      </div>
+      <div class="section">
+        <h3><strong>Comment utiliser la plateforme pour trouver le nom de votre film ou série que l'on cherche ?</strong></h3>
+        <ol>
+          <li>Allez sur la page d'accueil de la plateforme</li>
+          <li>Entrez une description du film ou de la série que vous recherchez dans le champ prévu à cet effet</li>
+          <li>Cliquez sur le bouton "Rechercher"</li>
+          <li>Notre intelligence artificielle analysera la description et vous donnera le titre correspondant</li>
+        </ol>
+      </div>
+      <div class="section">
+        <h3><strong>Exemples d'affichage de films et de séries</strong></h3>
+        <div>
+          <img src="{{ url_for('static', filename='img/image1.jpg') }}" alt="Image 1" style="width: 350px; height: 250px;">
+          <img src="{{ url_for('static', filename='img/image2.jpg') }}" alt="Image 2" style="width: 350px; height: 250px;">
+          <img src="{{ url_for('static', filename='img/image2.jpg') }}" alt="Image 3" style="width: 350px; height: 250px;">
+        </div></br>
+      <div class="section">
+        <a href="/" class="btn btn-primary">Essayer maintenant</a>
+      </div>
+      <div class="section">
+        <p>Contact: fadeabdoulrachid@gmail.com</p>
+      </div>
+    </div>
+  </body>
+</html>
