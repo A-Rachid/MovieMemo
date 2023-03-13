@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recherche de film/série par description</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      /* styles pour le body */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('https://geeko-media.lesoir.be/wp-content/uploads/2020/03/Popcorn_Time_interface-1068x580.jpg');
+        background-size: cover;
+        background-position: center center;
+      }
+
+      /* styles pour le container */
+      .container {
+        max-width: 600px;
+        text-align: center;
+        background-color: rgba(12, 12, 12, 0.9);
+        padding: 40px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* styles pour le titre */
+      h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        color: #c7a124;
+      }
+
+      /* styles pour le formulaire */
+      form {
+        margin-bottom: 40px;
+      }
+
+      label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #c7a124;
+      }
+
+      textarea {
+        font-size: 18px;
+        padding: 20px;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0062cc;
+      }
+
+      /* styles pour la réponse */
+      #response-div {
+        display: none;
+      }
+
+      h4 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #f8f7f7;
+      }
+
+      #response-text {
+        font-size: 18px;
+        color: #faf4f4;
+      }
+
+      /* styles pour les images */
+      .movie-img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      .navbar-nav {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .navbar-header {
+        padding: 0px 10;
+        margin-top: 0,500px;
+      }
+      .navbar {
+        height: 50px;
+      }
+      .navbar-right {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+      <h1>Recherche de film/série par description</h1>
+      <form>
+        <div class="form-group">
+          <label for="input">Entrer une description de film :</label>
+          <textarea class="form-control" id="input" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Rechercher</button>
+      </form>
+      <div class="mt-4" id="response-div" style="display: none;">
+        <h4>Résultat de la recherche :</h4>
+        <p id="response-text"></p>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#submit-btn").click(function (event) {
+          event.preventDefault();
+          var input = $("#input").val();
+          if (input !== "") {
+            $.ajax({
+              type: "POST",
+              url: "/prompt",
+              data: JSON.stringify({ prompt: input }),
+              contentType: "application/json;charset=UTF-8",
+              success: function (data) {
+                console.log(data);
+                $("#response-text").text(data);
+                $("#response-div").show();
+              },
+              error: function (xhr, status, error) {
+                alert("Error: " + error.message);
+              },
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
